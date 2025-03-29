@@ -59,4 +59,4 @@ To query and analyze churn data by segmenting customers, ranking them by revenue
 
 ## 📬 Contact
 
-Feel free to fork this project or connect with me on [LinkedIn](#) for collaboration or feedback!
+Feel free to fork this project or connect with me on [LinkedIn](https://www.linkedin.com/in/manuel-lizardo/) for collaboration or feedback!
