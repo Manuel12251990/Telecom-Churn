@@ -46,7 +46,7 @@ To query and analyze churn data by segmenting customers, ranking them by revenue
 
 ## 📂 File
 
-- [/workspaces/telecom-churn-sql/sql/telecom_churn_query.sql]: Full SQL script
+- sql/telecom_churn_query.sql: Full SQL script
 
 ---
 
