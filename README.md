@@ -11,7 +11,6 @@ To query and analyze churn data by segmenting customers, ranking them by revenue
 ## 🛠️ Tools & Environment
 
 - Microsoft SQL Server Management Studio (SSMS)
-- T-SQL (Transact-SQL)
 - Dataset format: CSV (converted to SQL table)
 
 ---
