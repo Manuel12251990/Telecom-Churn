@@ -1,31 +1,63 @@
-# Telecom-churn-sql
+# 📊 Telecom Churn SQL Analysis
 
--- Retrieve full customer data with tenure group, churn flag, and rank by charges
--- Used SQL functions techinques like CTEs, window functions, and case statements.
+This project showcases advanced SQL techniques using the [Telecom Churn dataset](#) to explore customer churn patterns in the telecom industry. The dataset was originally in CSV format and imported into SQL Server for this analysis.
 
-WITH Customer AS 
-(
-    Select *,
-      case
-          when tenure <= 12 then 'New'
-          when tenure between 13 and 48 then 'Mid-Term'
-          else 'Loyal'
-      end as TenureGroup
-    from telecom_churn
-), 
+## 📌 Objective
 
-RankedCharges AS 
-(
-  select
-     customerID,
-     MonthlyCharges,
-     TotalCharges,
-     Rank() over (order by totalcharges desc) as ChargeRank
-  from customer
-)
+To query and analyze churn data by segmenting customers, ranking them by revenue contribution, and preparing the data for future modeling.
 
-select 
-  c.*, r.*
-  from customer c 
-    inner join rankedcharges r on c.customerID = r.customerID
-    order by r.chargerank
+---
+
+## 🛠️ Tools & Environment
+
+- Microsoft SQL Server Management Studio (SSMS)
+- T-SQL (Transact-SQL)
+- Dataset format: CSV (converted to SQL table)
+
+---
+
+## ⚙️ SQL Techniques Demonstrated
+
+- Common Table Expressions (CTEs)
+- CASE statements for conditional segmentation
+- RANK() window function for customer charge ranking
+- Joining CTEs for enriched feature engineering
+- Order-based insights to support churn mitigation strategies
+
+---
+
+## 🧠 Query Breakdown
+
+- **Step 1:** Use a CTE to create tenure-based customer segments (`New`, `Mid-Term`, `Loyal`)
+- **Step 2:** Rank customers by `TotalCharges` to identify high-revenue users
+- **Step 3:** Join CTEs to get a comprehensive churn report with enriched fields
+
+---
+
+## 📄 Output Preview
+
+| customerID | TenureGroup | MonthlyCharges | TotalCharges | ChargeRank | Churn |
+|------------|-------------|----------------|---------------|------------|-------|
+| 7590-VHVEG | New         | 29.85          | 29.85         | 1123       | No    |
+| 5575-GNVDE | Mid-Term    | 56.95          | 1889.50       | 223        | No    |
+| ...        | ...         | ...            | ...           | ...        | ...   |
+
+---
+
+## 📂 File
+
+- [`telecom_churn_query.sql`](./sql/telecom_churn_query.sql): Full SQL script
+
+---
+
+## 📎 Next Steps
+
+- Build a churn prediction model using SQL or Python
+- Feed this query into Tableau or Power BI for visual analysis
+- Run A/B tests on the "New" customer segment to improve retention
+
+---
+
+## 📬 Contact
+
+Feel free to fork this project or connect with me on [LinkedIn](#) for collaboration or feedback!
