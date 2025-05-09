@@ -1,6 +1,7 @@
 # 📊 Telecom Churn SQL Analysis
 
 This project showcases advanced SQL techniques to explore customer churn patterns in the telecom industry. The dataset was originally in CSV format and imported into SQL Server for this analysis.
+https://public.tableau.com/app/profile/manuel.lizardo/viz/CustomerChurnAnalysis_17430403816220/CustomerChurnDashboard
 
 ## 📌 Objective
 
